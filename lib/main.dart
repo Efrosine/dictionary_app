@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo dua',
       debugShowCheckedModeBanner: false,
+      //ini peruabahannya
       theme: ThemeData(
         // This is the theme of your application.
         //
