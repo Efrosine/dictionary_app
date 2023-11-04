@@ -1,3 +1,7 @@
+import 'package:dictionary_app/page1.dart';
+import 'package:dictionary_app/page2.dart';
+import 'package:dictionary_app/page3.dart';
+import 'package:dictionary_app/page4.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -11,16 +15,6 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-int currentIndex = 0;
-
-void goToPage(index){
-  setState((){
-    currentIndex = index;
-  });
-}
-
-void setState(Null Function() param0) {
-}
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -53,22 +47,14 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: Column(
+      body: PageView(
         children: [
-        Container(
-          margin: EdgeInsets.only(top: 40, left: 20, right: 20),
-          child: TextField(
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                CupertinoIcons.search,
-                color: Colors.black,
-              ),
-              filled: true,
-              fillColor: Colors.white
-            ),
-          ),
-        ),
+          Page1(),
+          Page2(),
+          Page3(),
+          Page4(),
       ]),
+      
       bottomNavigationBar: GNav(
         gap: 10,
         padding: EdgeInsets.all(16),
