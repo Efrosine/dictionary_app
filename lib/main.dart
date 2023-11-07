@@ -1,4 +1,5 @@
 import 'package:dictionary_app/Home_page.dart';
+import 'package:dictionary_app/login_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      home: HomePage(),
+      home: loginPage(),
     );
   }
 }

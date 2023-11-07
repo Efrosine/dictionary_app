@@ -9,28 +9,36 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
-
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
   @override
+  List _page = [Page1(), Page2(), Page3(), Page4()];
+
+  int currentIndex = 0;
+  void goToPage(index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.green[100],
       appBar: AppBar(
         backgroundColor: Colors.green,
-        title: Text('Dictionary',
-        style: TextStyle(
-          color: Colors.green[100],
-          fontWeight: FontWeight.bold,
-          fontSize: 18,
-        ),
+        title: Text(
+          'Dictionary',
+          style: TextStyle(
+            color: Colors.green[100],
+            fontWeight: FontWeight.bold,
+            fontSize: 18,
+          ),
         ),
         centerTitle: true,
-         leading: IconButton(
+        leading: IconButton(
           icon: Icon(Icons.menu),
           color: Colors.green[100],
           onPressed: () {
@@ -47,35 +55,36 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      body: PageView(
-        children: [
-          Page1(),
-          Page2(),
-          Page3(),
-          Page4(),
-      ]),
-      
+      body: _page[currentIndex],
       bottomNavigationBar: GNav(
         gap: 10,
+        onTabChange: (index) => goToPage(index),
         padding: EdgeInsets.all(16),
         backgroundColor: const Color.fromRGBO(76, 175, 80, 1),
         color: Colors.green[100],
         activeColor: Colors.green,
         tabBackgroundColor: Colors.white,
-        tabs: const[
-          GButton(icon: Icons.home,
-          text: 'Home',
+        tabs: const [
+          GButton(
+            icon: Icons.home,
+            text: 'Home',
           ),
-          GButton(icon: Icons.favorite_border,
-          text: 'Likes',
+          GButton(
+            icon: Icons.menu_book,
+            text: 'Tenses',
           ),
-          GButton(icon: Icons.search,
-          text: 'Search',
+          GButton(
+            icon: Icons.search,
+            text: 'Dictionary',
           ),
-          GButton(icon: Icons.settings,
-          text: 'Settings',
+          GButton(
+            icon: Icons.settings,
+            text: 'Settings',
           ),
         ],
+      ),
+      drawer: Drawer(
+        
       ),
     );
   }

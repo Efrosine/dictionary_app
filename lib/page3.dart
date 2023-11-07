@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Page3 extends StatefulWidget {
@@ -11,7 +12,16 @@ class _Page3State extends State<Page3> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Text('Page 3'),
+      margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+      child: TextField(
+        decoration: InputDecoration(
+            prefixIcon: Icon(
+              CupertinoIcons.search,
+              color: Colors.black,
+            ),
+            filled: true,
+            fillColor: Colors.white),
+      ),
     );
   }
 }

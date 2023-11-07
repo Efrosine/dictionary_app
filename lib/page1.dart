@@ -11,19 +11,17 @@ class Page1 extends StatefulWidget {
 class _Page1State extends State<Page1> {
   @override
   Widget build(BuildContext context) {
-    return 
-    Container(
-        margin: EdgeInsets.only(top: 40, left: 20, right: 20),
-          child: TextField(
-            decoration: InputDecoration(
-              prefixIcon: Icon(
-                CupertinoIcons.search,
-                color: Colors.black,
-              ),
-              filled: true,
-              fillColor: Colors.white
+    return Container(
+      margin: EdgeInsets.only(top: 40, left: 20, right: 20),
+      child: TextField(
+        decoration: InputDecoration(
+            prefixIcon: Icon(
+              CupertinoIcons.search,
+              color: Colors.black,
             ),
-          ),
+            filled: true,
+            fillColor: Colors.white),
+      ),
     );
   }
 }
