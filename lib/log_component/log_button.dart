@@ -13,7 +13,7 @@ class _logButtonState extends State<logButton> {
  @override
  Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(25.0),
+      padding: EdgeInsets.all(15.0),
       margin: EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
         color: Colors.black,
