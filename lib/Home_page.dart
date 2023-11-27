@@ -14,7 +14,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+
   List _page = [Page1(), Page2(), Page3()];
+
 
   int currentIndex = 0;
   void goToPage(index) {
@@ -25,13 +27,13 @@ class _HomePageState extends State<HomePage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.black,
         title: Text(
           'Dictionary',
           style: TextStyle(
-            color: Colors.green[100],
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 18,
           ),
