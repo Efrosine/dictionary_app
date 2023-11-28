@@ -1,23 +1,58 @@
 import 'package:dictionary_app/log_component/log_Textfield.dart';
 import 'package:dictionary_app/log_component/log_button.dart';
+import 'package:dictionary_app/register_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class loginPage extends StatefulWidget {
-  const loginPage({super.key});
+import 'Home_page.dart';
+import 'auth_service.dart';
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<loginPage> createState() => _loginPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _loginPageState extends State<loginPage> {
+class _LoginPageState extends State<LoginPage> {
+  final _auth = AuthService();
+
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  void login() async {
+    final email = _emailController.text.trim();
+    final password = _passwordController.text.trim();
+    final user = await _auth.login(email, password, context);
+    if (user != null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Login is Successfully'),
+          backgroundColor: Colors.green,
+        ),
+      );
+      Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HomePage(),
+          ));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Cannot Login User'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
           child: Center(
-        child: Column(
+        child: ListView(
           children: [
             SizedBox(height: 40),
             Image.asset('assets/images/logo.png', height: 100),
@@ -32,6 +67,7 @@ class _loginPageState extends State<loginPage> {
             const SizedBox(height: 25),
             //user name
             LogTextField(
+              controller: _emailController,
               hintText: 'Username',
               secretText: false,
             ),
@@ -39,6 +75,7 @@ class _loginPageState extends State<loginPage> {
             const SizedBox(height: 10),
             //password
             LogTextField(
+              controller: _passwordController,
               hintText: 'Passworld',
               secretText: true,
             ),
@@ -49,7 +86,10 @@ class _loginPageState extends State<loginPage> {
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
             const SizedBox(height: 25),
-            logButton(),
+            LogButton(
+              text: 'Sign In',
+              onPressed: login,
+            ),
 
             const SizedBox(height: 25),
             Row(
@@ -92,10 +132,18 @@ class _loginPageState extends State<loginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text('Not a member?  '),
-                Text('Register now',
-                style: TextStyle(
-                  color: Colors.blueAccent
-                ),)
+                TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterPage()),
+                    );
+                  },
+                  child: Text(
+                    'Register now',
+                    style: TextStyle(color: Colors.blueAccent),
+                  ),
+                )
               ],
             ),
           ],

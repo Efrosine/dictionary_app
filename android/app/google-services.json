@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "268973470853",
+    "project_id": "kamus-app-3f65c",
+    "storage_bucket": "kamus-app-3f65c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268973470853:android:a61fccfaf3b9e10a4965ec",
+        "android_client_info": {
+          "package_name": "com.example.dictionary_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA5Y0DuatVhb_-7C5dzIZB3QBRaY23b18"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
