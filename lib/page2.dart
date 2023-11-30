@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'db_service.dart';
@@ -10,38 +11,70 @@ class Page2 extends StatefulWidget {
 }
 
 class _Page2State extends State<Page2> {
-  final db = DbService();
+  List<String> languages = ['English', 'Indonesia'];
+  String selectedLanguage = 'English';
+  String textInput = '';
+  String translatedText = '';
+
+  void _handleTranslateButtonPressed() {
+    // Isi kode Anda untuk menerjemahkan teks
+    // ...
+
+    setState(() {
+      translatedText = 'Translated text here';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ElevatedButton(
-          onPressed: () {
-            List<String> result = [
-              'Book', // Noun
-              'Quickly', // Adverb
-              'Radiant', // Adjective
-              'Discover', // Verb
-              'Guitar', // Noun
-              'Silently', // Adverb
-              'Spectacular', // Adjective
-              'Invent', // Verb
-              'Dream', // Noun
-              'Joyfully', // Adverb
-              'Vibrant', // Adjective
-              'Inspire', // Verb
-              'Sunset', // Noun
-              'Effortlessly', // Adverb
-              'Blossom', // Verb
-            ];
-
-            result.forEach((element) {
-              db.get(element);
-              Future.delayed(Duration(milliseconds: 500));
-            });
-
-            // db.trans('walk', 'en', 'id');
-          },
-          child: Text('add')),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Translate'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            TextField(
+              onChanged: (value) {
+                setState(() {
+                  textInput = value;
+                });
+              },
+              decoration: const InputDecoration(
+                prefixIcon: Icon(
+                  CupertinoIcons.search,
+                  color: Colors.black,
+                ),
+                hintText: 'Enter text to translate',
+              ),
+            ),
+            DropdownButton<String>(
+              value: selectedLanguage,
+              onChanged: (String? newValue) {
+                setState(() {
+                  selectedLanguage = newValue!;
+                });
+              },
+              items: languages.map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+            ElevatedButton(
+              onPressed: _handleTranslateButtonPressed,
+              child: const Text('Translate'),
+            ),
+            if (translatedText.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(translatedText),
+              ),
+          ],
+        ),
+      ),
     );
   }
 }

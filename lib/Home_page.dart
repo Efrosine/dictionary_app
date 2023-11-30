@@ -1,7 +1,6 @@
 import 'package:dictionary_app/page1.dart';
 import 'package:dictionary_app/page2.dart';
 import 'package:dictionary_app/page3.dart';
-import 'package:dictionary_app/page4.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -15,7 +14,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  List _page = [Page1(), Page2(), Page3(), Page4()];
+
+  List _page = [Page1(), Page2(), Page3()];
+
 
   int currentIndex = 0;
   void goToPage(index) {
@@ -26,13 +27,13 @@ class _HomePageState extends State<HomePage> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[100],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.black,
         title: Text(
           'Dictionary',
           style: TextStyle(
-            color: Colors.green[100],
+            color: Colors.white,
             fontWeight: FontWeight.bold,
             fontSize: 18,
           ),
@@ -74,17 +75,10 @@ class _HomePageState extends State<HomePage> {
             text: 'Tenses',
           ),
           GButton(
-            icon: Icons.search,
-            text: 'Dictionary',
-          ),
-          GButton(
-            icon: Icons.settings,
-            text: 'Settings',
+            icon: Icons.person,
+            text: 'Profile',
           ),
         ],
-      ),
-      drawer: Drawer(
-        
       ),
     );
   }
