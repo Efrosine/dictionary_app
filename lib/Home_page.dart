@@ -14,9 +14,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-
   List _page = [Page1(), Page2(), Page3()];
-
 
   int currentIndex = 0;
   void goToPage(index) {
@@ -61,10 +59,11 @@ class _HomePageState extends State<HomePage> {
         gap: 10,
         onTabChange: (index) => goToPage(index),
         padding: EdgeInsets.all(16),
-        backgroundColor: const Color.fromRGBO(76, 175, 80, 1),
-        color: Colors.green[100],
-        activeColor: Colors.green,
-        tabBackgroundColor: Colors.white,
+        backgroundColor: Colors.black,
+        color: Colors.grey[500],
+        activeColor: Colors.white,
+        tabMargin: EdgeInsets.symmetric(vertical: 8),
+        tabBackgroundColor: Colors.grey.shade800,
         tabs: const [
           GButton(
             icon: Icons.home,

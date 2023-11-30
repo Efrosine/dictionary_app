@@ -6,7 +6,7 @@ class WordModel {
 
   WordModel({required this.word, required this.meaning});
 
-  factory WordModel.fromJson(Map<String, dynamic> json) {
+  factory WordModel.fromJsonCustom(Map<String, dynamic> json) {
     Map<String, dynamic> meaning = {};
     var temp = json['meaning'] as Map;
     temp.forEach((key, value) {
@@ -29,6 +29,14 @@ class WordModel {
     return WordModel(
       word: json['entry'],
       meaning: meaning,
+    );
+  }
+
+  //from json
+  factory WordModel.fromJson(Map<String, dynamic> json) {
+    return WordModel(
+      word: json['word'],
+      meaning: json['meaning'],
     );
   }
 

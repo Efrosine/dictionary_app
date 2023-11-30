@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dictionary_app/word_model.dart';
 import 'package:dio/dio.dart';
 
-class DbService {
+class AddData {
   final db = FirebaseFirestore.instance;
   final dio = Dio();
   Future<void> add({required String id, leng, required Map<String, dynamic> json}) async {
@@ -21,7 +21,7 @@ class DbService {
             ));
 
     //Print data name meaning
-    var mod = WordModel.fromJson(response.data);
+    var mod = WordModel.fromJsonCustom(response.data);
     add(id: mod.word, leng: 'en', json: mod.toJson());
     var map = await mod.toJsonTrans();
     map.forEach((key, value) {

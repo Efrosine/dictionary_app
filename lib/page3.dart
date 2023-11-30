@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Page3 extends StatefulWidget {
@@ -44,8 +43,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Nama", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("Nama", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -54,8 +52,8 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 220,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Fajar Triatmojo", style: TextStyle(
-                    fontFamily: '', fontSize: 14)),
+                child: Text("Fajar Triatmojo",
+                    style: TextStyle(fontFamily: '', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -70,8 +68,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("NIM", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("NIM", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -80,8 +77,8 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 220,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("220605110152", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("220605110152",
+                    style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -96,8 +93,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Rating", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("Rating", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -108,11 +104,26 @@ class _Page3State extends State<Page3> {
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
                   children: [
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -155,8 +166,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Nama", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("Nama", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -165,8 +175,8 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 220,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Muhammad Ramadhani P", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 12)),
+                child: Text("Muhammad Ramadhani P",
+                    style: TextStyle(fontFamily: 'pop', fontSize: 12)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -181,8 +191,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("NIM", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("NIM", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -191,8 +200,8 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 220,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("220605110147", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("220605110147",
+                    style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -207,8 +216,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Rating", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("Rating", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -219,7 +227,10 @@ class _Page3State extends State<Page3> {
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
                   children: [
-                    Icon(Icons.star, color: Colors.yellow,),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
                   ],
                 ),
                 decoration: BoxDecoration(
@@ -262,8 +273,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Nama", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("Nama", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -272,8 +282,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 220,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Ecofah ", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("Ecofah ", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -288,8 +297,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("NIM", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("NIM", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -298,8 +306,8 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 220,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("220605110155", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("220605110155",
+                    style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -314,8 +322,7 @@ class _Page3State extends State<Page3> {
               Container(
                 width: 100,
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                child: Text("Rating", style: TextStyle(
-                    fontFamily: 'pop', fontSize: 14)),
+                child: Text("Rating", style: TextStyle(fontFamily: 'pop', fontSize: 14)),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Color.fromARGB(255, 176, 176, 176)),
@@ -326,12 +333,30 @@ class _Page3State extends State<Page3> {
                 padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
                   children: [
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
-                    Icon(Icons.star, color: Colors.yellow,),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow,
+                    ),
                   ],
                 ),
                 decoration: BoxDecoration(

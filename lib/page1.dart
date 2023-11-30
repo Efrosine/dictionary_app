@@ -1,20 +1,7 @@
+import 'package:dictionary_app/db_sevice.dart';
+import 'package:dictionary_app/detail.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const Page1(),
-    );
-  }
-}
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -23,13 +10,20 @@ class Page1 extends StatefulWidget {
   State<Page1> createState() => _Page1State();
 }
 
-class _Page1State extends State<Page1> {
-  List<String> recentWords = [];
+class _Page1State extends State<Page1> with SingleTickerProviderStateMixin {
+  final db = DbService();
+  late TabController _tabController;
 
-  void _handleSubmitted(String text) {
-    setState(() {
-      recentWords.add(text);
-    });
+  @override
+  void initState() {
+    _tabController = TabController(length: 2, vsync: this);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _tabController.dispose();
   }
 
   @override
@@ -38,33 +32,72 @@ class _Page1State extends State<Page1> {
       margin: EdgeInsets.only(top: 40, left: 20, right: 20),
       child: Column(
         children: [
-          TextField(
-            decoration: InputDecoration(
-                prefixIcon: Icon(
-                  CupertinoIcons.search,
-                  color: Colors.black,
+          Container(
+            height: 45,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              borderRadius: BorderRadius.circular(
+                25.0,
+              ),
+            ),
+            child: TabBar(
+              controller: _tabController,
+              indicator: BoxDecoration(
+                borderRadius: BorderRadius.circular(
+                  25.0,
                 ),
-                filled: true,
-                fillColor: Colors.grey[30]),
-            onSubmitted: _handleSubmitted,
+                color: Colors.green,
+              ),
+              labelColor: Colors.white,
+              onTap: (value) => setState(() {
+                print('index ${_tabController.index}');
+              }),
+              unselectedLabelColor: Colors.black,
+              tabs: [
+                Tab(
+                  text: 'English',
+                ),
+                Tab(
+                  text: 'Indonesia',
+                ),
+              ],
+            ),
           ),
-          SizedBox(
-            height: 30,
-          ),
-          Text('Recent',
-              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
           SizedBox(
             height: 20,
           ),
           Expanded(
-              child: ListView.builder(
-            itemCount: 5,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text('sdfghj'),
-              );
-            },
-          ))
+            child: FutureBuilder(
+              future: _tabController.index == 0
+                  ? db.getWordModel('en')
+                  : db.getWordModel('id'),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  var data = snapshot.data;
+                  return ListView.builder(
+                    itemCount: data!.length,
+                    itemBuilder: (context, index) {
+                      return ListTile(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    Detail(word: data[index].word, data: data),
+                              ));
+                        },
+                        title: Text(data[index].word),
+                      );
+                    },
+                  );
+                } else {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
+          ),
         ],
       ),
     );
